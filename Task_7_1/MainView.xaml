@@ -1,0 +1,33 @@
+﻿<Window x:Class="Task_7_1.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Task_7_1"
+             mc:Ignorable="d" 
+             Height="350" Width="300"
+        Title="Task_7_1">
+    <StackPanel>
+        <Label Content="Выбрать тип основной надписи" Margin="5"/>
+        <ComboBox ItemsSource="{Binding TitleBlocks}"
+                  SelectedValue="{Binding SelectedTitleBlock}"
+                  DisplayMemberPath="Name"
+                  Margin="5"/>
+
+        <Label Content="Количество листов" Margin="5"/>
+        <TextBox Text="{Binding SheetCount}" Margin="5"/>
+
+        <Label Content="Выбрать вид" Margin="5"/>
+        <ComboBox ItemsSource="{Binding Views}"
+                  SelectedValue="{Binding SelectedView}"
+                  DisplayMemberPath="Name"
+                  Margin="5"/>
+
+        <Label Content="Заполнить Designed By" Margin="5"/>
+        <TextBox Text="{Binding DesignedBy}" Margin="5"/>
+
+        <Button Content="Создать листы"
+                Command="{Binding CreateSheets}"
+                Margin="5"/>
+    </StackPanel>
+</Window>
